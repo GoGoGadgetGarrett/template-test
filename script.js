@@ -41,7 +41,8 @@ function removeLoadingSpinner() {
         // Stop loader, Show Quote
         removeLoadingSpinner();
        } catch (error) {
-           getQuote();
+        console.log(error)   
+        getQuote();
        }
    }
 // Tweet Quote

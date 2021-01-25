@@ -40,8 +40,7 @@ function removeLoadingSpinner() {
         quoteText.innerText = data.quoteText;
         // Stop loader, Show Quote
         removeLoadingSpinner();
-       } catch (error) {
-        console.log(error)   
+       } catch (error) {  
         getQuote();
        }
    }

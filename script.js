@@ -4,6 +4,7 @@
  const twitterBtn = document.getElementById('twitter');
  const newQuoteBtn = document.getElementById('new-quote');
  const loader = document.getElementById('loader');
+ const oldQuote; 
 
 function loading() {
     loader.hidden = false;
@@ -20,6 +21,8 @@ function complete() {
  // Get Quote From API
    async function getQuote () {
        loading();
+       if (data.quoteText)
+       {oldQuote = data.quoteText}
        const proxyUrl = 'https://arcane-mountain-19745.herokuapp.com/'
        const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
        try {
@@ -39,6 +42,9 @@ function complete() {
         }       
         quoteText.innerText = data.quoteText;
         // Stop loader, Show Quote
+        if (oldQuote === data.quoteText){
+         getQuote();
+        }
         complete();
        } catch (error) {  
         getQuote();

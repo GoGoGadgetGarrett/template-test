@@ -40,7 +40,7 @@ function complete() {
         }       
         quoteText.innerText = data.quoteText;
         // Stop loader, Show Quote
-        if (oldQuote === data.quoteText){
+        if (this.oldQuote === data.quoteText){
          getQuote();
         }
         this.oldQuote = data.quoteText

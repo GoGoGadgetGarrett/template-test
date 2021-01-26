@@ -21,8 +21,6 @@ function complete() {
  // Get Quote From API
    async function getQuote () {
        loading();
-       if (data.quoteText)
-       {this.oldQuote = data.quoteText}
        const proxyUrl = 'https://arcane-mountain-19745.herokuapp.com/'
        const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
        try {
@@ -45,6 +43,7 @@ function complete() {
         if (oldQuote === data.quoteText){
          getQuote();
         }
+        this.oldQuote = data.quoteText
         complete();
        } catch (error) {  
         getQuote();

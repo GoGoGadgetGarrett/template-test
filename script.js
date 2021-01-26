@@ -20,7 +20,7 @@ function complete() {
  // Get Quote From API
    async function getQuote () {
        loading();
-       const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+       const proxyUrl = 'https://arcane-mountain-19745.herokuapp.com/'
        const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
        try {
            const response = await fetch(proxyUrl + apiUrl);
